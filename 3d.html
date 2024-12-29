@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .banner{
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+    }
+    .banner .product{
+        /* background-color: red; */
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        left: 50%;
+        bottom: 170px;
+        transform: translateX(-50%);
+        z-index: 1;
+        transition: .7s;
+        --left: 0px;
+        display: flex;
+    }
+    .banner .product .trophy{
+        background: 
+        var(--url) var(--left) 0,
+        url(freepik-export-20241207124304a7BK.png);
+        background-size: auto 100%;
+        width: 250px;
+        aspect-ratio: 2 / 3.3; /*ini sama dengan perbandngan ukuran 2:3,3 */
+        background-blend-mode: multiply;
+        mask-image: url(freepik-export-20241207124304a7BK.png);
+        mask-size: auto 100%; /*ini lagi dipelajari*/
+        transition: .7s;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .banner .product:hover{
+        --left: -200px;
+        transform: translateX(-50%) translateY(-120px);
+    }
+    .banner .product .trophy:nth-child(2){
+        opacity: 0;
+    }
+    .banner .product:hover .trophy:nth-child(2){
+        opacity: 1;
+    }
+</style>
+<body>
+    <div class="banner">
+        <div class="product">
+            <div class="trophy"
+            style="--url: url(Bite\ kelor\ \(2\).png)"></div>
+            
+            <div class="trophy"
+            style="--url: url(Bite\ kelor.png)"></div>
+        </div>
+    </div>
+</body>
+</html>

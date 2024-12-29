@@ -1,0 +1,301 @@
+*,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Header section */
+header {
+    position: sticky;
+    top: 0;
+  display: flex;
+  margin: none;
+  padding: 1.5em;
+  background-color: #191919;
+  justify-content: space-between;
+  align-items: center;
+}
+header > h1 {
+  color: white;
+  display: flex;
+  text-align: left;
+  margin-left: 5%;
+}
+nav > ul.ul {
+  display: flex;
+  gap: 3em;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+}
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  border-radius: 2em;
+}
+nav > ul > li > a.link {
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5em;
+  padding: 0.1em;
+  transition: 0.5s;
+}
+nav > ul > li > a.link:hover {
+  color: #191919;
+  background-color: aliceblue;
+  padding: 0.5em;
+}
+
+/* Body section */
+body {
+  background: url(bgg.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.baris {
+    margin: 0 2em 2em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+.border {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background-color: #191919;
+  color: aliceblue;
+  border-radius: 20px;
+  padding: 1em;
+  margin: 1.5em;
+  transition: all 0.1s;
+}
+.border::-webkit-scrollbar{
+  scrollbar-color: transparent;
+}
+.border img {
+  width: 450px;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.border:hover {
+  border: solid aliceblue;
+}
+
+@media (max-width: 1000px) {
+  .border img {
+    width: 300px;
+    height: 150px;
+    border-radius: 20px;
+  }
+}
+
+/* Untuk layar berukuran 790px atau lebih kecil */
+@media (max-width: 790px) {
+  .border img {
+    width: 450px;
+    height: 330px;
+    border-radius: 20px;
+  }
+}
+
+/* Untuk layar berukuran 768px atau lebih kecil */
+@media (max-width: 768px) {
+  body{
+    background: url(Desain\ tanpa\ judul\ \(1\).png);
+  }
+  header {
+    padding: 0.5em;
+  }
+  header > h1 {
+    font-size: 1.5rem;
+    animation: bulat 1s ease-in-out 1;
+  }
+  @keyframes bulat {
+    from {
+      transform: translateX(-100px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  .hamburger {
+    display: block;
+    animation: ham 1s ease-in-out 1;
+  }
+  @keyframes ham {
+    from {
+      transform: translateX(100px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  nav > ul.ul {
+    flex-direction: column;
+    position: fixed;
+    left: -100%;
+    top: 3.8em;
+    background-color: #191919;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    align-items: center;
+  }
+  nav > ul > li {
+    margin: 16px;
+  }
+  nav > ul.ul.active {
+    left: 0;
+  }
+  main {
+    margin-top: 2.5em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .baris {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .border img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  .border {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+/* Untuk layar berukuran 480px atau lebih kecil (mobile) */
+@media (max-width: 480px) {
+  main{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .border {
+    width: 90%;
+    margin: auto;
+  }
+
+  .border img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+}
+
+/* CSS untuk modal */
+.modal {
+  display: none; /* Hidden secara default */
+  position: fixed; /* Tetap di posisi layar */
+  z-index: 1; /* Di atas elemen lain */
+  padding-top: 100px; /* Jarak dari atas */
+  left: 0;
+  top: 0;
+  width: 100%; /* Lebar layar penuh */
+  height: 100%; /* Tinggi layar penuh */
+  overflow: auto; /* Untuk scroll jika diperlukan */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.9
+  ); /* Warna latar belakang dengan sedikit transparansi */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.modal-content,
+.close {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Gaya untuk tombol close (X) */
+.close {
+  position: absolute;
+  top: 50px;
+  right: 75px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Gaya untuk caption di bawah gambar */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Untuk tampilan di bawah 768px */
+@media only screen and (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+  }
+
+  .close {
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+  }
+
+  #caption {
+    font-size: 14px;
+  }
+}

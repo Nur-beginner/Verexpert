@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengacak Kelompok</title>
+    <link rel="shortcut icon" href="vinta.png" type="image/x-icon" />
+    <link rel="stylesheet" href="kelompokstyle.css" />
+  </head>
+  <body>
+    <header>
+        <h1 style="font-style: italic">VEREXPERT</h1>
+        <nav>
+          <ul class="ul">
+            <li><a href="index.html" class="link">Home</a></li>
+            <li><a href="Galeri.html" class="link">Galeri</a></li>
+            <li><a href="InfoTugas.html" class="link">Roster</a></li>
+            <li><a href="Pengacak kelompok.html" class="link">Kelompok</a></li>
+            <li><a href="passw.html" class="link">About</a></li>
+          </ul>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </nav>
+      </header>
+
+    <main>
+      <div class="container">
+        <h1>Pengacak Kelompok</h1>
+        <p>Masukkan nama-nama (satu nama per baris):</p>
+        <textarea id="namesInput"></textarea>
+        <p>Masukkan jumlah kelompok:</p>
+        <input type="number" id="groupCountInput" min="1" value="2" />
+        <div class="tombol1">
+          <button onclick="acakKelompok()">Acak Kelompok</button>
+        </div>
+      </div>
+
+      <div class="penengah">
+        <div class="results" id="results"></div>
+      </div>
+
+    </main>
+    <footer>
+      <p>&copy;Verexpert</p>
+    </footer>
+    <script src="rndomklp.js"></script>
+  </body>
+</html>
